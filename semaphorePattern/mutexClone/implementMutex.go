@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Szemaphore struct that simulates a mutex using a buffered channel
+// Semaphore struct that simulates a mutex using a buffered channel
 type Semaphore struct {
 	ch chan struct{} // Buffered channel to act as the semaphore
 }
@@ -59,4 +59,5 @@ func main() {
 
 	// Wait for all goroutines to finish
 	wg.Wait()
+	fmt.Println(sharedResource)
 }
